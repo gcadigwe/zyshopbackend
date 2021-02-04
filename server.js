@@ -13,7 +13,7 @@ const app = express()
 //mongodb connect
 
 mongoose
-    .connect(process.env.MONGO_URI, { useNewUrlParser: true,useFindAndModify: false })
+    .connect(process.env.MONGO_URI, { useUnifiedTopology: true, useCreateIndex:true, useNewUrlParser: true,useFindAndModify: false })
     .then(() => console.log("DB Connected"));
 
 mongoose.connection.on("error", err => {
